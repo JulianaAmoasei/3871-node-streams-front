@@ -4,9 +4,10 @@ const containerVideos = document.querySelector(".videos__container");
 
 async function buscarEMostrarVideos() {
   try {
-    const videos = await getResources();
+    const result = await getResources();
+    console.log(result.videos);
 
-    videos.forEach((video) => {
+    result.videos.forEach((video) => {
       containerVideos.innerHTML += `
         <li class="videos__item">
             <iframe src="${video.url}" title="${video.titulo}" frameborder="0" allowfullscreen></iframe>
